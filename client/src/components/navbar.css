@@ -1,0 +1,42 @@
+.navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  .glass-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    backdrop-filter: blur(0.5rem);
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust the transparency as needed */
+    ox-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for better contrast */
+  }
+  
+  .navbar-logo {
+    font-size: 1.6rem;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #333;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Adjust the transparency as needed */
+  }
+  
