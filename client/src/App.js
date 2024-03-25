@@ -6,7 +6,7 @@ function App() {
   const {apidata}=useContext(Context);
   console.log(apidata)
 
-  const URL="/data";
+  const URL="/api/data";
   const fetchData=async()=>{
     try {
       const response = await fetch(URL);
