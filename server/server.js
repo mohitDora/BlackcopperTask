@@ -15,7 +15,7 @@ const corsOptions={
 
 app.use(express.json())
 app.use(morgan('dev'));
-app.use(router)
+app.use("/api",router)
 app.use(cors(corsOptions))
 
 app.get("/",(req,res)=>{
