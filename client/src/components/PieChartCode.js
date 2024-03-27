@@ -20,7 +20,7 @@ function PieChartCode() {
         setAspect(1);
       } else if (width >= 768 && width < 1024) {
         setChunk(20);
-        setAspect(2);
+        setAspect(1);
       } else {
         setChunk(20);
         setAspect(2);
@@ -67,9 +67,7 @@ function PieChartCode() {
         }
       };
 
-      console.log("true",page >= resultArray.length / chunk - 1)
-      console.log("true",page )
-      console.log("true",resultArray.length / chunk - 1)
+
   return (
     
     <div className='main-box'>
@@ -83,7 +81,7 @@ function PieChartCode() {
             data={slicedData}
             cx="50%"
             cy="50%"
-            outerRadius={150}
+            outerRadius={90}
             fill="#673ab7"
             label
           />

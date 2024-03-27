@@ -9,8 +9,8 @@ import PieChartCode from './components/PieChartCode';
 import RadarChartcode from "./components/RadarChartCode"
 import StackBarChartCode from './components/StackBarChartCode';
 function App() {
-  const {setApidata,setFilterPagedata, setIsError}=useContext(Context);
-
+  const {setApidata,setFilterPagedata,isError, setIsError}=useContext(Context);
+console.log("error",isError)
   const URL="https://blackcopper-task.vercel.app/api/data";
   const fetchData=async()=>{
     try {

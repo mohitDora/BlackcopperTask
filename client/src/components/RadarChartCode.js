@@ -6,10 +6,31 @@ import { Button,Typography,Skeleton } from '@mui/material';
 function RadarChartcode({props}) {
 
   const { apidata,isError,isCall,setIsCall} = useContext(Context);
-  const [page, setPage] = useState(0)
-  const chunk = 20;
-  const uniqueInsights = {};
+  const [page, setPage] = useState(0);
+  const [chunk, setChunk] = useState(50);
+  const [aspect, setAspect] = useState(2);
 
+  const uniqueInsights = {};
+  useEffect(() => {
+    function handleResize() {
+      const width = window.innerWidth;
+      if (width < 768) {
+        setChunk(20);
+        setAspect(1);
+      } else if (width >= 768 && width < 1024) {
+        setChunk(30);
+        setAspect(1);
+      } else {
+        setChunk(20);
+        setAspect(1);
+      }
+    }
+
+    handleResize();
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [])
   const extractedData = apidata.map((obj) => ({
     key: obj._id,
     [props]: obj[props],
@@ -50,7 +71,7 @@ console.log("rel",slicedData)
         {!isError?
       <>
       {apidata.length!==0?
-          <ResponsiveContainer width="100%" aspect={1.5/1}>
+          <ResponsiveContainer width="100%" aspect={aspect}>
           <RadarChart cx="50%" cy="50%" outerRadius="80%" data={slicedData}>
           <PolarGrid />
           <PolarAngleAxis dataKey="insight" />
@@ -61,7 +82,7 @@ console.log("rel",slicedData)
         <Button variant='contained' onClick={() => decrement()} disabled={page === 0}  sx={{backgroundColor:"#673ab7",marginLeft:"2rem",":hover":{backgroundColor:"#512da8"}}}>Previous</Button>
         </ResponsiveContainer>
          :<Typography>OOPS! No result found</Typography>}
-      </> : <ResponsiveContainer width="100%" aspect={1.5/1}>
+      </> : <ResponsiveContainer width="100%" aspect={aspect}>
   <Skeleton variant="rectangular" width={210} height={60} />
   </ResponsiveContainer>
       }
