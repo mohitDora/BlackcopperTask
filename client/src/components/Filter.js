@@ -71,7 +71,7 @@ function Filter() {
         setSelectedPestles(event.target.value);
     };
 
-const URL=`http://localhost:5000/api/data/like?region=${selectedRegions.toString()}&source=${selectedSources.toString()}&sector=${selectedSectors.toString()}&topic=${selectedTopics.toString()}&pestle=${selectedPestles.toString()}`;
+const URL=`https://blackcopper-task.vercel.app/api/data/like?region=${selectedRegions.toString()}&source=${selectedSources.toString()}&sector=${selectedSectors.toString()}&topic=${selectedTopics.toString()}&pestle=${selectedPestles.toString()}`;
 
   const fetchData=async()=>{
     try {

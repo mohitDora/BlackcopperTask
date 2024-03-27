@@ -11,7 +11,7 @@ import StackBarChartCode from './components/StackBarChartCode';
 function App() {
   const {setApidata,setFilterPagedata, setIsError}=useContext(Context);
 
-  const URL="http://localhost:5000/api/data";
+  const URL="https://blackcopper-task.vercel.app/api/data";
   const fetchData=async()=>{
     try {
       const response = await fetch(URL,{

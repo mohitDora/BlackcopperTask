@@ -6,9 +6,9 @@ const morgan = require('morgan');
 
 const app=express();
 
-const PORT= 5000;
+const PORT= "https://blackcopper-task.vercel.app/" || 5000;
 const corsOptions={
-    origin:"http://localhost:3000",
+    origin:"https://blackcopper-task-client-delta.vercel.app",
     methods: "GET,POST,PUT,DELETE,PATCH,HEAD",
     credentials:true
 }
