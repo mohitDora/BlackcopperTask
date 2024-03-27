@@ -6,17 +6,17 @@ const morgan = require('morgan');
 
 const app=express();
 
-const PORT=5000;
+const PORT= 5000;
 const corsOptions={
     origin:"http://localhost:3000",
     methods: "GET,POST,PUT,DELETE,PATCH,HEAD",
     credentials:true
 }
-
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(morgan('dev'));
 app.use("/api",router)
-app.use(cors(corsOptions))
+
 
 app.get("/",(req,res)=>{
     res.status(200).send("home");

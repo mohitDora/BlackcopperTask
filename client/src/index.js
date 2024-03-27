@@ -11,7 +11,7 @@ let theme = createTheme({
   palette: {
     mode: "dark",
     background: {
-      default: "#121212"
+      default: "black"
     },
     primary: {
       light: deepPurple[300],
@@ -33,7 +33,7 @@ let theme = createTheme({
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ThemeProvider theme={theme}>
+ 
     <React.StrictMode>
       <BrowserRouter>
         <ContextApi>
@@ -41,6 +41,6 @@ root.render(
         </ContextApi>
       </BrowserRouter>
     </React.StrictMode>
-  </ThemeProvider>
+ 
 );
 
